@@ -1,0 +1,20 @@
+@use "variables" as *;
+
+// Mixin pour le responsive
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Mixin pour les boutons
+@mixin button-style($bg-color, $text-color) {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  text-decoration: none;
+}

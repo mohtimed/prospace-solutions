@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Encodage des caractères -->
+        <meta charset="UTF-8">
+
+        <!-- Affichage adapté aux écrans mobiles (responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Titre de l'onglet et titre principal pour Google -->
+        <title>Location de bureaux et salles de réunion en France | ProSpace Solutions</title>
+
+        <!-- Résumé de la page pour les moteurs de recherche -->
+        <meta name="description" content="Trouvez et réservez votre espace de travail idéal : salles de réunion, bureaux privatifs et espaces de coworking dans toutes les grandes villes françaises.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <!-- Feuille de style -->
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+
+    <body>
+
+        <!-- ================== HEADER ET NAVIGATION ================== -->
+        <header class="header">
+            <div class="container header__inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="header__logo" title="ProSpace Solutions - Retour à l'accueil">
+                    <img src="img/Container.png" alt="Logo du site">
+                    <span>ProSpace <strong>Solutions</strong></span>
+                </a>
+
+                <!-- Menu principal -->
+                <nav class="header__nav" aria-label="Navigation principale">
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active" title="Rechercher un espace de travail" aria-current="page">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="mes-espaces.html" title="Consulter mes espaces sauvegardés">
+                                Mes Espaces
+                                <span class="header__badge hidden" id="badge-favoris">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" title="Contacter l'équipe ProSpace Solutions">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <main>
+
+            <!-- ================== SECTION : HERO ================== -->
+            <section class="hero">
+                <div class="container hero__content">
+
+                    <p class="hero__badge">
+                        <img src="img/logo.png" alt="">
+                    Location B2B en France
+                    </p>
+
+                    <h1 class="hero__title">
+                        Trouvez votre espace de travail idéal <span class="hero__accent">en France</span>
+                    </h1>
+
+                    <p class="hero__text">
+                        Salles de réunion, bureaux privatifs et espaces premium
+                        disponibles à la demande dans les grandes villes françaises.
+                    </p>
+
+                    <ul class="hero__features">
+                        <li><img src="img/Icon_verified.png" alt="">Réservation instantanée</li>
+                        <li><img src="img/Icon_verified.png" alt="">Annulation flexible</li>
+                        <li><img src="img/Icon_verified.png" alt="">Support dédié</li>
+                    </ul>
+
+                </div>
+            </section>
+
+            <!-- ================== SECTION : RECHERCHE ET FILTRES ================== -->
+            <section class="filtres">
+                <div class="container">
+
+                    <h2 class="sr-only">Filtrer les espaces de travail</h2>
+
+                    <form class="filtres__form" id="form-filtres">
+
+                        <!-- Filtre par ville -->
+                        <div class="filtres__groupe">
+                            <label for="filtre-ville">Ville</label>
+                            <select id="filtre-ville" name="ville">
+                                <option value="">Toutes les villes</option>
+                                <option value="paris">Paris</option>
+                                <option value="lyon">Lyon</option>
+                                <option value="marseille">Marseille</option>
+                                <option value="bordeaux">Bordeaux</option>
+                                <option value="nantes">Nantes</option>
+                            </select>
+                        </div>
+
+                        <!-- Filtre par capacité -->
+                        <div class="filtres__groupe">
+                            <label for="filtre-capacite">Capacité</label>
+                            <select id="filtre-capacite" name="capacite">
+                                <option value="">Toutes capacités</option>
+                                <option value="1-10">1 à 10 personnes</option>
+                                <option value="11-25">11 à 25 personnes</option>
+                                <option value="26-50">26 à 50 personnes</option>
+                            </select>
+                        </div>
+
+                        <!-- Filtres par équipements -->
+                        <div class="filtres__equipements">
+                            <p>Équipements</p>
+
+                            <label for="filtre-wifi">
+                                <input type="checkbox" id="filtre-wifi" name="equipements" value="wifi">
+                                Wifi Fibre
+                            </label>
+
+                            <label for="filtre-pmr">
+                                <input type="checkbox" id="filtre-pmr" name="equipements" value="pmr">
+                                Accès PMR
+                            </label>
+
+                            <label for="filtre-visio">
+                                <input type="checkbox" id="filtre-visio" name="equipements" value="visio">
+                                Visioconférence
+                            </label>
+
+                            <label for="filtre-ecran">
+                                <input type="checkbox" id="filtre-ecran" name="equipements" value="ecran">
+                                Écran 4K
+                            </label>
+
+                            <label for="filtre-cafe">
+                                <input type="checkbox" id="filtre-cafe" name="equipements" value="cafe">
+                                Café
+                            </label>
+                        </div>
+
+                    </form>
+
+                </div>
+            </section>
+
+            <!-- ================== SECTION : RÉSULTATS ================== -->
+            <section class="resultats">
+                <div class="container">
+
+                    <h2 class="resultats__titre" id="compteur-espaces">6 espaces disponibles</h2>
+
+                    <!-- Indicateur de chargement -->
+                    <div class="spinner" id="spinner"></div>
+
+                    <!-- Message si aucun résultat -->
+                    <p class="message-vide" id="message-vide">
+                        Aucun espace ne correspond à votre recherche. Modifiez vos filtres pour voir plus de résultats.
+                    </p>
+
+                    <!-- Grille des espaces (générée en JavaScript) -->
+                    <div class="resultats__grille" id="liste-espaces"></div>
+
+                </div>
+            </section>
+
+            
+            <!-- ================== FOOTER ================== -->
+            <footer class="footer">
+                <div class="container footer__inner">
+
+                    <!-- Identité de la marque -->
+                    <div class="footer__brand">
+                        <a href="index.html" class="footer__logo" title="ProSpace Solutions - Retour à l'accueil">
+                            <img src="img/Container.png" alt="">
+                            <span>ProSpace <strong>Solutions</strong></span>
+                        </a>
+                        <p class="footer__desc">
+                            Location d'espaces professionnels en France pour les entreprises
+                            et indépendants exigeants.
+                        </p>
+                        <a href="contact.html" class="footer__contact" title="Contacter l'équipe ProSpace Solutions">
+                            Nous contacter
+                        </a>
+                    </div>
+
+                    <!-- Colonne : Destinations -->
+                    <nav class="footer__nav" aria-label="Destinations">
+                        <h2 class="footer__titre">Destinations</h2>
+                        <ul>
+                            <li><a href="index.html" title="Espaces de travail à Paris">Espaces à Paris</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Lyon">Espaces à Lyon</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Bordeaux">Espaces à Bordeaux</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Nantes">Espaces à Nantes</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Marseille">Espaces à Marseille</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Toulouse">Espaces à Toulouse</a></li>
+                            <li><a href="index.html" title="Espaces de travail à Lille">Espaces à Lille</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Colonne : Services -->
+                    <nav class="footer__nav" aria-label="Services">
+                        <h2 class="footer__titre">Services</h2>
+                        <ul>
+                            <li><a href="index.html" title="Réserver une salle de réunion">Salles de réunion</a></li>
+                            <li><a href="index.html" title="Découvrir nos espaces de coworking">Espaces de coworking</a></li>
+                            <li><a href="index.html" title="Organiser une formation">Salles de formation</a></li>
+                            <li><a href="index.html" title="Louer un bureau privatif">Bureaux privatifs</a></li>
+                            <li><a href="index.html" title="Réserver un studio visio">Studios visio</a></li>
+                            <li><a href="index.html" title="Réserver un espace événementiel">Espaces événementiels</a></li>
+                        </ul>
+                    </nav>
+
+                    <!-- Colonne : Légal et accès -->
+                    <nav class="footer__nav" aria-label="Informations légales et accès">
+                        <h2 class="footer__titre">Légal &amp; accès</h2>
+                        <ul>
+                            <li><a href="index.html" title="Consulter nos mentions légales">Mentions légales</a></li>
+                            <li><a href="index.html" title="Consulter nos conditions générales">CGU &amp; CGV</a></li>
+                            <li><a href="index.html" title="Consulter notre politique de confidentialité">Politique de confidentialité</a></li>
+                            <li><a href="index.html" title="Gérer vos préférences de cookies">Gestion des cookies</a></li>
+                            <li><a href="index.html" title="Consulter notre déclaration d'accessibilité">Déclaration d'accessibilité</a></li>
+                            <li><a href="index.html" title="Parcourir le plan du site">Sitemap</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <!-- Bas de page -->
+                <div class="container footer__bas">
+                    <p>&copy; 2025 ProSpace Solutions SAS &mdash; Tous droits réservés</p>
+                    <p>
+                        Conformité RGAA 4.1 &middot;
+                        <a href="index.html" title="Consulter la déclaration d'accessibilité">Accessibilité : partiellement conforme</a>
+                    </p>
+                </div>
+            </footer>
+
+        </main>
+    </body>
+</html>

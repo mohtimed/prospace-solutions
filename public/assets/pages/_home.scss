@@ -1,0 +1,74 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/typography" as *;
+
+.hero {
+  position: relative;
+  min-height: 580px;
+  padding: 150px 0 $spacing-xl;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.88)), url("../img/banner.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__content {
+  width: 100%;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: 6px $spacing-md;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 50px;
+  background-color: $active-color;
+  color: $active-link-color;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.hero__title {
+  max-width: 650px;
+  margin: $spacing-md 0;
+  color: $white;
+  font-size: $font-size-h1;
+  line-height: 1.2;
+}
+
+.hero__accent {
+  color: $active-link-color;
+}
+
+.hero__text {
+  max-width: 420px;
+  color: $text-muted;
+}
+
+.hero__features {
+  display: flex;
+  gap: $spacing-lg;
+  margin-top: $spacing-lg;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    color: $text-hero;
+    font-size: $font-size-small;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,0 +1,23 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/colors" as *;
+@use "../abstracts/typography" as *;
+
+body {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-color;
+  background-color: $light-gray;
+}
+
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+h1, h2, h3 {
+  font-family: $font-title;
+  font-weight: 700;
+}
+
