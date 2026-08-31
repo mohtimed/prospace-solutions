@@ -30,7 +30,7 @@ function afficherEquipements(equipements) {
       nom = "Café";
     }
 
-    html += "<li>" + nom + "</li>";
+    html += "<li><img src='img/Icon-" + equipement + ".png' alt=''>" + nom + "</li>";
   });
 
   return html;
@@ -57,14 +57,40 @@ function afficherEspaces(espaces) {
     carte.className = "carte";
 
     let html = "";
+
+    // Image avec bouton favori
+    html += "<div class='carte__image'>";
     html += "<img src='" + espace.image + "' alt='" + espace.nom + " à " + espace.quartier + "' loading='lazy'>";
-    html += "<h3>" + espace.nom + "</h3>";
-    html += "<p>" + espace.quartier + "</p>";
-    html += "<p>" + espace.note + " (" + espace.avis + " avis)</p>";
-    html += "<p>" + espace.capacite + " pers.</p>";
+    html += "<button class='carte__favori' data-id='" + espace.id + "' aria-label='Ajouter " + espace.nom + " aux favoris' aria-pressed='false'>";
+    html += "<img src='img/Icon-coeur.png' alt=''>";
+    html += "</button>";
+    html += "</div>";
+
+    // Contenu
+    html += "<div class='carte__contenu'>";
+    html += "<h3 class='carte__titre'>" + espace.nom + "</h3>";
+
+    html += "<p class='carte__lieu'><img src='img/Icon-localisation.png' alt=''>" + espace.quartier + "</p>";
+
+    html += "<p class='carte__note'>";
+    html += "<span class='carte__etoiles' aria-hidden='true'>★★★★★</span>";
+    html += "<strong>" + espace.note + "</strong>";
+    html += "<span class='carte__avis'>(" + espace.avis + " avis)</span>";
+    html += "</p>";
+
+    html += "<p class='carte__infos'>";
+    html += "<img src='img/Icon-personne.png' alt=''>" + espace.capacite + " pers.";
+    html += "</p>";
+
     html += "<ul class='carte__equipements'>" + afficherEquipements(espace.equipements) + "</ul>";
-    html += "<p>" + espace.prixHeure + "€ /heure</p>";
-    html += "<a href='espace.html?id=" + espace.id + "'>Voir la fiche</a>";
+
+    // Pied de carte
+    html += "<div class='carte__pied'>";
+    html += "<p class='carte__prix'><strong>" + espace.prixHeure + "€</strong> <span>/heure</span></p>";
+    html += "<a href='espace.html?id=" + espace.id + "' class='carte__lien'>Voir la fiche</a>";
+    html += "</div>";
+
+    html += "</div>";
 
     carte.innerHTML = html;
     listeEspaces.appendChild(carte);
