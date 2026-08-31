@@ -1,0 +1,84 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/typography" as *;
+
+.filtres {
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  padding: $spacing-md 0;
+}
+
+.filtres__form {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+}
+
+.filtres__label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.filtres__groupe {
+  select {
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: 12px;
+    font-size: $font-size-small;
+    color: $text-color;
+    background-color: $white;
+    cursor: pointer;
+  }
+}
+
+.filtres__separateur {
+  width: 1px;
+  height: 24px;
+  background-color: $border-color;
+}
+
+.filtres__equipements {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    color: $text-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $hover-equipement;
+    }
+  }
+
+  input {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border-radius: 1px;
+    background-color: $checkbox-color;
+    accent-color: $primary-color;
+    cursor: pointer;
+
+        &:checked {
+            appearance: auto;
+        }
+    }
+}

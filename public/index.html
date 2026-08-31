@@ -91,37 +91,40 @@
 
                     <form class="filtres__form" id="form-filtres">
 
-                        <!-- Filtre par ville -->
+                        <p class="filtres__label">
+                            <img src="img/Icon-filtre.png" alt="">
+                            Filtrer
+                        </p>
+
                         <div class="filtres__groupe">
-                            <label for="filtre-ville">Ville</label>
+                            <label for="filtre-ville" class="sr-only">Ville</label>
                             <select id="filtre-ville" name="ville">
                                 <option value="">Toutes les villes</option>
-                                <option value="paris">Paris</option>
-                                <option value="lyon">Lyon</option>
+                                <option value="paris">Paris 8e</option>
+                                <option value="paris">Paris 11e</option>
+                                <option value="lyon">Lyon 2e</option>
                                 <option value="marseille">Marseille</option>
                                 <option value="bordeaux">Bordeaux</option>
                                 <option value="nantes">Nantes</option>
                             </select>
                         </div>
 
-                        <!-- Filtre par capacité -->
                         <div class="filtres__groupe">
-                            <label for="filtre-capacite">Capacité</label>
+                            <label for="filtre-capacite" class="sr-only">Capacité</label>
                             <select id="filtre-capacite" name="capacite">
                                 <option value="">Toutes capacités</option>
-                                <option value="1-10">1 à 10 personnes</option>
-                                <option value="11-25">11 à 25 personnes</option>
-                                <option value="26-50">26 à 50 personnes</option>
+                                <option value="1-5">1 à 5 personnes</option>
+                                <option value="10 à 20">10 à 20 personnes</option>
+                                <option value="20+">20+ personnes</option>
                             </select>
                         </div>
 
-                        <!-- Filtres par équipements -->
-                        <div class="filtres__equipements">
-                            <p>Équipements</p>
+                        <div class="filtres__separateur"></div>
 
+                        <div class="filtres__equipements">
                             <label for="filtre-wifi">
                                 <input type="checkbox" id="filtre-wifi" name="equipements" value="wifi">
-                                Wifi Fibre
+                                WiFi Fibre
                             </label>
 
                             <label for="filtre-pmr">
@@ -129,19 +132,9 @@
                                 Accès PMR
                             </label>
 
-                            <label for="filtre-visio">
-                                <input type="checkbox" id="filtre-visio" name="equipements" value="visio">
-                                Visioconférence
-                            </label>
-
                             <label for="filtre-ecran">
                                 <input type="checkbox" id="filtre-ecran" name="equipements" value="ecran">
                                 Écran 4K
-                            </label>
-
-                            <label for="filtre-cafe">
-                                <input type="checkbox" id="filtre-cafe" name="equipements" value="cafe">
-                                Café
                             </label>
                         </div>
 
