@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -350,6 +351,179 @@ h1, h2, h3 {
 .hero__features img {
   width: 16px;
   height: 16px;
+}
+
+.page-espace {
+  padding-top: 100px;
+}
+
+.fil-ariane {
+  padding: 16px 0;
+}
+.fil-ariane ol {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  color: #CAD5E2;
+}
+.fil-ariane li {
+  display: flex;
+  gap: 8px;
+}
+.fil-ariane li::after {
+  content: "›";
+}
+.fil-ariane li:last-child::after {
+  content: "";
+}
+.fil-ariane a {
+  color: #CAD5E2;
+}
+.fil-ariane a:hover {
+  color: #1E88E5;
+}
+
+.espace__entete {
+  margin-bottom: 32px;
+}
+
+.espace__meta {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #CAD5E2;
+}
+
+.espace__galerie {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+.espace__galerie img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.espace__corps {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  padding-bottom: 64px;
+}
+
+.espace__contenu {
+  flex: 1 1 60%;
+}
+
+.espace__bloc {
+  margin-bottom: 32px;
+}
+.espace__bloc h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.espace__equipements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.espace__equipements li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 calc(50% - 8px);
+  padding: 16px;
+  border: 1px solid #E1E6ED;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 14px;
+}
+.espace__equipements img {
+  width: 16px;
+  height: 16px;
+}
+
+.espace__capacite {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #EFF6FF;
+}
+
+.espace__tarifs {
+  flex: 0 0 320px;
+  padding: 32px;
+  border: 1px solid #E1E6ED;
+  border-radius: 16px;
+  background-color: #FFFFFF;
+}
+.espace__tarifs h2 {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.espace__tarifs table {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.espace__tarifs th {
+  padding: 8px 0;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  color: #CAD5E2;
+}
+.espace__tarifs td {
+  padding: 8px 0;
+  text-align: right;
+  font-weight: 700;
+}
+
+.btn-favori {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #E5397E;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btn-favori img {
+  width: 16px;
+  height: 16px;
+}
+
+.btn-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #1E88E5;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+}
+.btn-contact img {
+  width: 16px;
+  height: 16px;
+}
+
+.espace__mention {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #CAD5E2;
+  text-align: center;
 }
 
 .resultats {

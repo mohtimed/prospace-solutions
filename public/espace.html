@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+
+        <!-- Encodage des caractères -->
+        <meta charset="UTF-8">
+
+        <!-- Affichage adapté aux écrans mobiles (responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Titre de l'onglet et titre principal pour Google -->
+        <title>Détail de l'espace | ProSpace Solutions</title>
+
+        <!-- Résumé de la page pour les moteurs de recherche -->
+        <meta name="description" content="Consultez les détails, tarifs et équipements de cet espace de travail professionnel.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <!-- Feuille de style -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <!-- ================== HEADER ET NAVIGATION ================== -->
+        <header class="header">
+            <div class="container header__inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="header__logo" title="ProSpace Solutions - Retour à l'accueil">
+                    <img src="img/Container.png" alt="">
+                    <span>ProSpace <strong>Solutions</strong></span>
+                </a>
+
+                <!-- Menu principal -->
+                <nav class="header__nav" aria-label="Navigation principale">
+                    <ul>
+                        <li>
+                            <a href="index.html" title="Rechercher un espace de travail">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="mes-espaces.html" title="Consulter mes espaces sauvegardés">
+                                Mes Espaces
+                                <span class="header__badge hidden" id="badge-favoris">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" title="Contacter l'équipe ProSpace Solutions">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <main class="page-espace">
+            <div class="container">
+
+                <!-- Fil d'ariane -->
+                <nav class="fil-ariane" aria-label="Fil d'ariane">
+                    <ol>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html" id="ariane-ville">Espaces</a></li>
+                        <li><span id="ariane-nom" aria-current="page">Chargement...</span></li>
+                    </ol>
+                </nav>
+
+                <!-- En-tête de l'espace -->
+                <section class="espace__entete">
+                    <h1 id="espace-nom">Chargement...</h1>
+                    <p class="espace__meta">
+                        <span id="espace-adresse"></span>
+                        <span id="espace-note"></span>
+                    </p>
+                </section>
+
+                <!-- Galerie photos -->
+                <section class="espace__galerie" id="espace-galerie">
+                    <h2 class="sr-only">Photos de l'espace</h2>
+                </section>
+
+                <!-- Contenu principal et tarifs -->
+                <div class="espace__corps">
+
+                    <div class="espace__contenu">
+
+                        <section class="espace__bloc">
+                            <h2>À propos de cet espace</h2>
+                            <p id="espace-description"></p>
+                        </section>
+
+                        <section class="espace__bloc">
+                            <h2>Équipements inclus</h2>
+                            <ul class="espace__equipements" id="espace-equipements"></ul>
+                        </section>
+
+                        <section class="espace__bloc espace__capacite">
+                            <h2>Capacité &amp; Configuration</h2>
+                            <p id="espace-capacite"></p>
+                        </section>
+
+                    </div>
+
+                    <aside class="espace__tarifs">
+                        <h2>Tarifs</h2>
+
+                        <table>
+                            <caption class="sr-only">Grille tarifaire de l'espace</caption>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">À l'heure</th>
+                                    <td id="tarif-heure"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Demi-journée (4h)</th>
+                                    <td id="tarif-demi"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Journée complète</th>
+                                    <td id="tarif-journee"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="btn-favori" id="btn-favori" aria-pressed="false">
+                            <img src="img/Icon-coeur.png" alt="">
+                            <span id="btn-favori-texte">Sauvegarder en favoris</span>
+                        </button>
+
+                        <a href="contact.html" class="btn-contact" id="btn-contact">
+                            <img src="img/Icon-telephone.png" alt="">
+                            Contacter l'équipe
+                        </a>
+
+                        <p class="espace__mention">Réponse sous 2h ouvrées &middot; Sans engagement</p>
+                    </aside>
+
+                </div>
+
+            </div>
+        </main>
+
+        
+        <!-- ================== FOOTER ================== -->
+        <footer class="footer">
+            <div class="container footer__inner">
+
+                <!-- Identité de la marque -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo" title="ProSpace Solutions - Retour à l'accueil">
+                        <img src="img/Container.png" alt="">
+                        <span>ProSpace <strong>Solutions</strong></span>
+                    </a>
+                    <p class="footer__desc">
+                        Location d'espaces professionnels en France pour les entreprises
+                        et indépendants exigeants.
+                    </p>
+                    <a href="contact.html" class="footer__contact" title="Contacter l'équipe ProSpace Solutions">
+                        <img src="img/Icon-mail.png" alt="">
+                        Nous contacter
+                    </a>
+                </div>
+
+                <!-- Colonne : Destinations -->
+                <nav class="footer__nav" aria-label="Destinations">
+                    <h2 class="footer__titre">Destinations</h2>
+                    <ul>
+                        <li><a href="espace.html" title="Espaces de travail à Paris">Espaces à Paris</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Lyon">Espaces à Lyon</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Bordeaux">Espaces à Bordeaux</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Nantes">Espaces à Nantes</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Marseille">Espaces à Marseille</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Toulouse">Espaces à Toulouse</a></li>
+                        <li><a href="espace.html" title="Espaces de travail à Lille">Espaces à Lille</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Colonne : Services -->
+                <nav class="footer__nav" aria-label="Services">
+                    <h2 class="footer__titre">Services</h2>
+                    <ul>
+                        <li><a href="espace.html" title="Réserver une salle de réunion">Salles de réunion</a></li>
+                        <li><a href="espace.html" title="Découvrir nos espaces de coworking">Espaces de coworking</a></li>
+                        <li><a href="espace.html" title="Organiser une formation">Salles de formation</a></li>
+                        <li><a href="espace.html" title="Louer un bureau privatif">Bureaux privatifs</a></li>
+                        <li><a href="espace.html" title="Réserver un studio visio">Studios visio</a></li>
+                        <li><a href="espace.html" title="Réserver un espace événementiel">Espaces événementiels</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Colonne : Légal et accès -->
+                <nav class="footer__nav" aria-label="Informations légales et accès">
+                    <h2 class="footer__titre">Légal &amp; accès</h2>
+                    <ul>
+                        <li><a href="espace.html" title="Consulter nos mentions légales">Mentions légales</a></li>
+                        <li><a href="espace.html" title="Consulter nos conditions générales">CGU &amp; CGV</a></li>
+                        <li><a href="espace.html" title="Consulter notre politique de confidentialité">Politique de confidentialité</a></li>
+                        <li><a href="espace.html" title="Gérer vos préférences de cookies">Gestion des cookies</a></li>
+                        <li><a href="espace.html" title="Consulter notre déclaration d'accessibilité">Déclaration d'accessibilité</a></li>
+                        <li><a href="espace.html" title="Parcourir le plan du site">Sitemap</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- Bas de page -->
+            <div class="container footer__bas">
+                <p>&copy; 2026 ProSpace Solutions SAS &mdash; Tous droits réservés</p>
+                <p>
+                    Conformité RGAA 4.1 &middot;
+                    <a href="#" title="Consulter la déclaration d'accessibilité">Accessibilité : partiellement conforme</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/espace.js"></script>
+    </body>
+</html>

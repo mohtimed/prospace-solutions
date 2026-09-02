@@ -12,8 +12,24 @@
     "prixJournee": 280,
     "equipements": ["wifi", "pmr", "ecran"],
     "image": "img/wagram_converted.png",
-    "description": "Au cœur du 8e arrondissement, à deux pas de l'Arc de Triomphe, l'Espace Wagram Opéra offre un cadre premium pour vos réunions stratégiques et présentations clients.",
-    "adresse": "14 Avenue de Wagram, 75008 Paris"
+    "images": [
+      "img/wagram_converted.png",
+      "img/espace-wagram-opera-2.jpg",
+      "img/espace-wagram-opera-3.jpg"
+    ],
+    "adresse": "14 Avenue de Wagram, 75008 Paris",
+    "description": "Au cœur du 8e arrondissement, à deux pas de l'Arc de Triomphe, l'Espace Wagram Opéra offre un cadre premium pour vos réunions stratégiques et présentations clients. La salle est équipée d'un mobilier haut de gamme, d'une acoustique soignée et d'une lumière naturelle généreuse grâce à ses larges baies vitrées. Idéal pour les comités de direction, les sessions de négociation et les workshops en petit groupe.",
+    "equipementsDetail": [
+      "WiFi Fibre 1 Gb/s",
+      "Écran 4K 86\"",
+      "Visioconférence intégrée",
+      "Tableau blanc interactif",
+      "Accès PMR complet",
+      "Climatisation réversible",
+      "Café & eau inclus",
+      "Parking sécurisé -1"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   },
   {
     "id": "atelier-republique",
@@ -28,8 +44,22 @@
     "prixJournee": 210,
     "equipements": ["wifi", "ecran"],
     "image": "img/republique_converted.png",
-    "description": "Un atelier lumineux au charme industriel, idéal pour les sessions de travail créatives et les ateliers d'équipe.",
-    "adresse": "22 Rue du Faubourg du Temple, 75011 Paris"
+    "images": [
+      "img/republique_converted.png",
+      "img/espace-atelier-republique-2.jpg",
+      "img/espace-atelier-republique-3.jpg"
+    ],
+    "adresse": "28 Rue Oberkampf, 75011 Paris",
+    "description": "Espace créatif et modulable installé dans un loft rénové du quartier de la République. Baigné de lumière zénithale, l'Atelier convient aux workshops collaboratifs, séances de design thinking ou sessions de formation en petits groupes. Son aménagement flexible permet de passer d'une configuration classe à un espace debout en quelques minutes.",
+    "equipementsDetail": [
+      "WiFi Fibre 500 Mb/s",
+      "Écran 4K 75\"",
+      "Tableau blanc magnétique",
+      "Cuisine équipée",
+      "Terrasse privative",
+      "Lumière naturelle zénithale"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   },
   {
     "id": "confluence-executive",
@@ -40,12 +70,27 @@
     "note": 4.9,
     "avis": 22,
     "prixHeure": 55,
-    "prixDemiJournee": 190,
+    "prixDemiJournee": 195,
     "prixJournee": 340,
     "equipements": ["wifi", "pmr", "ecran"],
     "image": "img/confluence.png",
-    "description": "Suite exécutive dans le quartier d'affaires de la Confluence, équipée pour les comités de direction et les négociations.",
-    "adresse": "8 Quai Perrache, 69002 Lyon"
+    "images": [
+      "img/confluence.png",
+      "img/espace-confluence-executive-2.jpg",
+      "img/espace-confluence-executive-3.jpg"
+    ],
+    "adresse": "12 Quai Perrache, 69002 Lyon",
+    "description": "Suite prestige avec vue sur la Saône. Conçue pour accueillir séminaires, assemblées générales et grands événements d'entreprise dans un cadre architectural remarquable. Équipements de dernière génération et service conciergerie inclus.",
+    "equipementsDetail": [
+      "WiFi Fibre 10 Gb/s",
+      "Double écran 4K 98\"",
+      "Accès PMR complet",
+      "Catering sur demande",
+      "Parking privatif 10 places",
+      "Service conciergerie",
+      "Système son Bose intégré"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   },
   {
     "id": "chartrons-board-room",
@@ -56,12 +101,26 @@
     "note": 4.7,
     "avis": 18,
     "prixHeure": 40,
-    "prixDemiJournee": 140,
+    "prixDemiJournee": 145,
     "prixJournee": 250,
     "equipements": ["wifi", "pmr"],
     "image": "img/chartron.png",
-    "description": "Salle de conseil élégante dans le quartier historique des Chartrons, avec mobilier design et lumière naturelle.",
-    "adresse": "45 Rue Notre Dame, 33000 Bordeaux"
+    "images": [
+      "img/chartron.png",
+      "img/espace-chartrons-board-room-2.jpg",
+      "img/espace-chartrons-board-room-3.jpg"
+    ],
+    "adresse": "5 Quai des Chartrons, 33300 Bordeaux",
+    "description": "Salle de conseil avec vue sur les quais classés au patrimoine UNESCO. Un cadre d'exception pour vos conseils d'administration et événements corporate. Mobilier en bois massif, acoustique maîtrisée et terrasse privative pour les pauses.",
+    "equipementsDetail": [
+      "WiFi Fibre 1 Gb/s",
+      "Projecteur HD 4000 lumens",
+      "Accès PMR",
+      "Terrasse privative 25m²",
+      "Cave à vins sur demande",
+      "Service traiteur local"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   },
   {
     "id": "ile-de-nantes-studio",
@@ -76,8 +135,22 @@
     "prixJournee": 170,
     "equipements": ["wifi", "ecran"],
     "image": "img/nantes_converted.png",
-    "description": "Studio convivial sur l'Île de Nantes, parfait pour les petites équipes et les entretiens.",
-    "adresse": "12 Boulevard de la Prairie au Duc, 44200 Nantes"
+    "images": [
+      "img/nantes_converted.png",
+      "img/espace-ile-de-nantes-studio-2.jpg",
+      "img/espace-ile-de-nantes-studio-3.jpg"
+    ],
+    "adresse": "3 Bd de la Prairie-au-Duc, 44200 Nantes",
+    "description": "Studio contemporain sur l'Île de Nantes, quartier créatif en pleine transformation urbaine. Idéal pour les petites équipes agiles, entretiens ou points d'avancement en format intime. Lumière naturelle et connexion ultra-rapide.",
+    "equipementsDetail": [
+      "WiFi Fibre 500 Mb/s",
+      "Écran 4K 65\"",
+      "Tableau blanc",
+      "Kitchenette équipée",
+      "Lumière naturelle",
+      "Vélos à disposition"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   },
   {
     "id": "vieux-port-panorama",
@@ -88,11 +161,26 @@
     "note": 4.4,
     "avis": 29,
     "prixHeure": 38,
-    "prixDemiJournee": 130,
-    "prixJournee": 240,
-    "equipements": ["wifi", "pmr"],
+    "prixDemiJournee": 135,
+    "prixJournee": 235,
+    "equipements": ["wifi", "pmr", "ecran"],
     "image": "img/marseille_converted.png",
-    "description": "Vue imprenable sur le Vieux-Port depuis cet espace baigné de lumière, idéal pour les séminaires.",
-    "adresse": "3 Quai du Port, 13002 Marseille"
+    "images": [
+      "img/marseille_converted.png",
+      "img/espace-vieux-port-panorama-2.jpg",
+      "img/espace-vieux-port-panorama-3.jpg"
+    ],
+    "adresse": "1 Place aux Huiles, 13001 Marseille",
+    "description": "Face au Vieux-Port de Marseille, cette salle lumineuse offre une vue panoramique sur les navettes et le Fort Saint-Jean. Un cadre inspirant pour vos réunions d'équipe, séminaires régionaux ou lancements de projets.",
+    "equipementsDetail": [
+      "WiFi Fibre 1 Gb/s",
+      "Écran OLED 80\"",
+      "Accès PMR",
+      "Vue panoramique Vieux-Port",
+      "Service traiteur disponible",
+      "Climatisation"
+    ],
+    "configuration": "Configuration modulable : théâtre, classe, U, boardroom — sur demande"
   }
 ]
+
