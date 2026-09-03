@@ -14,8 +14,8 @@
     "image": "img/wagram_converted.png",
     "images": [
       "img/wagram_converted.png",
-      "img/espace-wagram-opera-2.jpg",
-      "img/espace-wagram-opera-3.jpg"
+      "img/wagram2_converted.png",
+      "img/wagram3_converted.png"
     ],
     "adresse": "14 Avenue de Wagram, 75008 Paris",
     "description": "Au cœur du 8e arrondissement, à deux pas de l'Arc de Triomphe, l'Espace Wagram Opéra offre un cadre premium pour vos réunions stratégiques et présentations clients. La salle est équipée d'un mobilier haut de gamme, d'une acoustique soignée et d'une lumière naturelle généreuse grâce à ses larges baies vitrées. Idéal pour les comités de direction, les sessions de négociation et les workshops en petit groupe.",
@@ -46,8 +46,8 @@
     "image": "img/republique_converted.png",
     "images": [
       "img/republique_converted.png",
-      "img/espace-atelier-republique-2.jpg",
-      "img/espace-atelier-republique-3.jpg"
+      "img/republique2_converted.png",
+      "img/republique3_converted.png"
     ],
     "adresse": "28 Rue Oberkampf, 75011 Paris",
     "description": "Espace créatif et modulable installé dans un loft rénové du quartier de la République. Baigné de lumière zénithale, l'Atelier convient aux workshops collaboratifs, séances de design thinking ou sessions de formation en petits groupes. Son aménagement flexible permet de passer d'une configuration classe à un espace debout en quelques minutes.",
@@ -76,8 +76,8 @@
     "image": "img/confluence.png",
     "images": [
       "img/confluence.png",
-      "img/espace-confluence-executive-2.jpg",
-      "img/espace-confluence-executive-3.jpg"
+      "img/confluence2.png",
+      "img/confluence3.png"
     ],
     "adresse": "12 Quai Perrache, 69002 Lyon",
     "description": "Suite prestige avec vue sur la Saône. Conçue pour accueillir séminaires, assemblées générales et grands événements d'entreprise dans un cadre architectural remarquable. Équipements de dernière génération et service conciergerie inclus.",
@@ -107,8 +107,8 @@
     "image": "img/chartron.png",
     "images": [
       "img/chartron.png",
-      "img/espace-chartrons-board-room-2.jpg",
-      "img/espace-chartrons-board-room-3.jpg"
+      "img/chartron1.png",
+      "img/chartron3.png"
     ],
     "adresse": "5 Quai des Chartrons, 33300 Bordeaux",
     "description": "Salle de conseil avec vue sur les quais classés au patrimoine UNESCO. Un cadre d'exception pour vos conseils d'administration et événements corporate. Mobilier en bois massif, acoustique maîtrisée et terrasse privative pour les pauses.",
@@ -137,8 +137,8 @@
     "image": "img/nantes_converted.png",
     "images": [
       "img/nantes_converted.png",
-      "img/espace-ile-de-nantes-studio-2.jpg",
-      "img/espace-ile-de-nantes-studio-3.jpg"
+      "img/nantes2_converted.png",
+      "img/nantes3_converted.png"
     ],
     "adresse": "3 Bd de la Prairie-au-Duc, 44200 Nantes",
     "description": "Studio contemporain sur l'Île de Nantes, quartier créatif en pleine transformation urbaine. Idéal pour les petites équipes agiles, entretiens ou points d'avancement en format intime. Lumière naturelle et connexion ultra-rapide.",
@@ -167,8 +167,8 @@
     "image": "img/marseille_converted.png",
     "images": [
       "img/marseille_converted.png",
-      "img/espace-vieux-port-panorama-2.jpg",
-      "img/espace-vieux-port-panorama-3.jpg"
+      "img/marseille2_converted.png",
+      "img/marseille3_converted.png"
     ],
     "adresse": "1 Place aux Huiles, 13001 Marseille",
     "description": "Face au Vieux-Port de Marseille, cette salle lumineuse offre une vue panoramique sur les navettes et le Fort Saint-Jean. Un cadre inspirant pour vos réunions d'équipe, séminaires régionaux ou lancements de projets.",

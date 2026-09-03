@@ -94,6 +94,10 @@ function afficherEspaces(espaces) {
 
     carte.innerHTML = html;
     listeEspaces.appendChild(carte);
+
+    // On applique l'état favori au bouton
+    const boutonFavori = carte.querySelector(".carte__favori");
+    majBoutonFavori(boutonFavori, espace.id);
   });
 }
 
@@ -170,3 +174,28 @@ filtreCapacite.addEventListener("change", filtrerEspaces);
 checkboxes.forEach(function (checkbox) {
   checkbox.addEventListener("change", filtrerEspaces);
 });
+
+
+// ================== CLIC SUR LES BOUTONS FAVORIS ==================
+listeEspaces.addEventListener("click", function (event) {
+  const bouton = event.target.closest(".carte__favori");
+
+  if (bouton === null) {
+    return;
+  }
+
+  const id = bouton.dataset.id;
+  basculerFavori(id);
+  majBoutonFavori(bouton, id);
+});
+
+// Met à jour l'apparence d'un bouton favori
+function majBoutonFavori(bouton, id) {
+  if (estFavori(id)) {
+    bouton.classList.add("actif");
+    bouton.setAttribute("aria-pressed", "true");
+  } else {
+    bouton.classList.remove("actif");
+    bouton.setAttribute("aria-pressed", "false");
+  }
+}

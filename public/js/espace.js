@@ -3,6 +3,7 @@ const parametres = new URLSearchParams(window.location.search);
 const idEspace = parametres.get("id");
 
 // ================== SÉLECTION DES ÉLÉMENTS ==================
+const arianeVille = document.getElementById("ariane-ville");
 const arianeNom = document.getElementById("ariane-nom");
 const espaceNom = document.getElementById("espace-nom");
 const espaceAdresse = document.getElementById("espace-adresse");
@@ -21,24 +22,41 @@ const btnContact = document.getElementById("btn-contact");
 // ================== AFFICHAGE DE L'ESPACE ==================
 function afficherEspace(espace) {
 
-  // Mise à jour du titre de la page (SEO - US-10)
+  // Titre de la page (SEO - US-10)
   document.title = espace.nom + " - Salle de réunion " + espace.capacite + " p. | ProSpace Solutions";
 
   // Fil d'ariane
+  arianeVille.textContent = espace.quartier;
   arianeNom.textContent = espace.nom;
 
   // En-tête
   espaceNom.textContent = espace.nom;
-  espaceAdresse.textContent = espace.adresse;
-  espaceNote.textContent = espace.note + " (" + espace.avis + " avis)";
 
-  // Galerie
-  espaceGalerie.innerHTML += "<img src='" + espace.image + "' alt='" + espace.nom + " à " + espace.quartier + "'>";
+  let htmlAdresse = "";
+  htmlAdresse += "<img src='img/Icon-localisation.png' alt=''>" + espace.adresse;
+  espaceAdresse.innerHTML = htmlAdresse;
+
+  let htmlNote = "";
+  htmlNote += "<span class='espace__etoiles' aria-hidden='true'>★★★★★</span>";
+  htmlNote += "<strong>" + espace.note + "</strong>";
+  htmlNote += "<span class='espace__avis'>· " + espace.avis + " avis vérifiés</span>";
+  espaceNote.innerHTML = htmlNote;
+
+  // Galerie : 1 grande image + 2 petites
+  let htmlGalerie = "";
+  htmlGalerie += "<div class='galerie__principale'>";
+  htmlGalerie += "<img src='" + espace.images[0] + "' alt='" + espace.nom + " - vue principale'>";
+  htmlGalerie += "</div>";
+  htmlGalerie += "<div class='galerie__secondaires'>";
+  htmlGalerie += "<img src='" + espace.images[1] + "' alt='" + espace.nom + " - vue secondaire' loading='lazy'>";
+  htmlGalerie += "<img src='" + espace.images[2] + "' alt='" + espace.nom + " - vue complémentaire' loading='lazy'>";
+  htmlGalerie += "</div>";
+  espaceGalerie.innerHTML = htmlGalerie;
 
   // Description
   espaceDescription.textContent = espace.description;
 
-  // Équipements
+  // Équipements détaillés
   let htmlEquipements = "";
   espace.equipementsDetail.forEach(function (equipement) {
     htmlEquipements += "<li><img src='img/Icon_verified.png' alt=''>" + equipement + "</li>";
@@ -58,6 +76,35 @@ function afficherEspace(espace) {
 
   // Lien de contact pré-rempli
   btnContact.href = "contact.html?espace=" + espace.id;
+
+  // État initial du bouton favori
+  majBoutonFavoriFiche(espace.id);
+
+  // Clic sur le bouton favori
+  const btnFavori = document.getElementById("btn-favori");
+  btnFavori.addEventListener("click", function () {
+    basculerFavori(espace.id);
+    majBoutonFavoriFiche(espace.id);
+  });
+}
+
+// ================== ÉTAT DU BOUTON FAVORI ==================
+function majBoutonFavoriFiche(id) {
+  const btnFavori = document.getElementById("btn-favori");
+  const texte = document.getElementById("btn-favori-texte");
+  const icone = document.getElementById("btn-favori-icone");
+
+  if (estFavori(id)) {
+    btnFavori.classList.add("actif");
+    btnFavori.setAttribute("aria-pressed", "true");
+    texte.textContent = "Sauvegardé en Favoris";
+    icone.src = "img/Icon-coeur-rouge.png";
+  } else {
+    btnFavori.classList.remove("actif");
+    btnFavori.setAttribute("aria-pressed", "false");
+    texte.textContent = "Sauvegarder en Favoris";
+    icone.src = "img/Icon-coeur.png";
+  }
 }
 
 // ================== CHARGEMENT DES DONNÉES ==================
@@ -69,7 +116,6 @@ fetch("data/espaces.json")
     return response.json();
   })
   .then(function (data) {
-    // On cherche l'espace correspondant à l'id de l'URL
     const espace = data.find(function (element) {
       return element.id === idEspace;
     });

@@ -177,3 +177,7 @@
   font-size: $font-size-small;
   font-weight: $font-weight-medium;
 }
+
+.carte__favori.actif {
+  background-color: $secondary-color;
+}
