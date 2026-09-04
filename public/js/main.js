@@ -62,7 +62,7 @@ function afficherEspaces(espaces) {
     html += "<div class='carte__image'>";
     html += "<img src='" + espace.image + "' alt='" + espace.nom + " à " + espace.quartier + "' loading='lazy'>";
     html += "<button class='carte__favori' data-id='" + espace.id + "' aria-label='Ajouter " + espace.nom + " aux favoris' aria-pressed='false'>";
-    html += "<img src='img/Icon-coeur.png' alt=''>";
+    html += "<img src='img/Icon-coeur.png' alt='' class='carte__favori-icone'>";
     html += "</button>";
     html += "</div>";
 
@@ -191,11 +191,15 @@ listeEspaces.addEventListener("click", function (event) {
 
 // Met à jour l'apparence d'un bouton favori
 function majBoutonFavori(bouton, id) {
+  const icone = bouton.querySelector(".carte__favori-icone");
+
   if (estFavori(id)) {
     bouton.classList.add("actif");
     bouton.setAttribute("aria-pressed", "true");
+    icone.src = "img/Icon-coeur-blanc.png";
   } else {
     bouton.classList.remove("actif");
     bouton.setAttribute("aria-pressed", "false");
+    icone.src = "img/Icon-coeur.png";
   }
 }

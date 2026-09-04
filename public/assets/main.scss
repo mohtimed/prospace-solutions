@@ -16,10 +16,12 @@
 // Pages
 @use "pages/home";
 @use "pages/espace";
+@use "pages/mes-espaces";
 
 // Composants
 @use "components/cards/espace-card";
 
 // Utilitaires
 @use "utils/accessibility";
+
 

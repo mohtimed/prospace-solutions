@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <!-- Encodage des caractères -->
+        <meta charset="UTF-8">
+
+        <!-- Affichage adapté aux écrans mobiles (responsive) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Titre de l'onglet et titre principal pour Google -->
+        <title>Mes espaces sauvegardés | ProSpace Solutions</title>
+
+        <!-- Résumé de la page pour les moteurs de recherche -->
+        <meta name="description" content="Retrouvez la sélection de vos espaces de travail favoris et accédez rapidement à leurs fiches détaillées.">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <!-- Feuille de style -->
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+
+    <body>
+
+        <!-- ================== HEADER ET NAVIGATION ================== -->
+        <header class="header">
+            <div class="container header__inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="header__logo" title="ProSpace Solutions - Retour à l'accueil">
+                    <img src="img/Container.png" alt="Logo du site">
+                    <span>ProSpace <strong>Solutions</strong></span>
+                </a>
+
+                <!-- Menu principal -->
+                <nav class="header__nav" aria-label="Navigation principale">
+                    <ul>
+                        <li>
+                            <a href="index.html" title="Rechercher un espace de travail">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="mes-espaces.html" class="active" title="Consulter mes espaces sauvegardés" aria-current="page">
+                                Mes Espaces
+                                <span class="header__badge hidden" id="badge-favoris">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="contact.html" title="Contacter l'équipe ProSpace Solutions">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <main class="page-mes-espaces">
+            <div class="container">
+
+                <div class="mes-espaces__entete">
+                    <div>
+                        <h1>Mes Espaces Sauvegardés</h1>
+                        <p class="mes-espaces__compteur" id="compteur-favoris">0 espace dans votre sélection</p>
+                    </div>
+
+                    <button class="btn-vider" id="btn-vider">
+                        <img src="img/Icon-poubelle-rose.png" alt="">
+                        Vider ma sélection
+                    </button>
+                </div>
+
+                <!-- Liste des favoris (générée en JS) -->
+                <div class="mes-espaces__liste" id="liste-favoris"></div>
+
+                <!-- Message si aucun favori -->
+                <p class="message-vide hidden" id="message-vide-favoris">
+                    Vous n'avez aucun espace sauvegardé pour le moment.
+                    <a href="index.html">Parcourir les espaces disponibles</a>
+                </p>
+
+            </div>
+        </main>
+
+        <!-- ================== FOOTER ================== -->
+        <footer class="footer">
+            <div class="container footer__inner">
+
+                <!-- Identité de la marque -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo" title="ProSpace Solutions - Retour à l'accueil">
+                        <img src="img/Container.png" alt="">
+                        <span>ProSpace <strong>Solutions</strong></span>
+                    </a>
+                    <p class="footer__desc">
+                        Location d'espaces professionnels en France pour les entreprises
+                        et indépendants exigeants.
+                    </p>
+                    <a href="contact.html" class="footer__contact" title="Contacter l'équipe ProSpace Solutions">
+                        <img src="img/Icon-mail.png" alt="">
+                        Nous contacter
+                    </a>
+                </div>
+
+                <!-- Colonne : Destinations -->
+                <nav class="footer__nav" aria-label="Destinations">
+                    <h2 class="footer__titre">Destinations</h2>
+                    <ul>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Paris">Espaces à Paris</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Lyon">Espaces à Lyon</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Bordeaux">Espaces à Bordeaux</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Nantes">Espaces à Nantes</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Marseille">Espaces à Marseille</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Toulouse">Espaces à Toulouse</a></li>
+                        <li><a href="mes-espaces.html" title="Espaces de travail à Lille">Espaces à Lille</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Colonne : Services -->
+                <nav class="footer__nav" aria-label="Services">
+                    <h2 class="footer__titre">Services</h2>
+                    <ul>
+                        <li><a href="mes-espaces.html" title="Réserver une salle de réunion">Salles de réunion</a></li>
+                        <li><a href="mes-espaces.html" title="Découvrir nos espaces de coworking">Espaces de coworking</a></li>
+                        <li><a href="mes-espaces.html" title="Organiser une formation">Salles de formation</a></li>
+                        <li><a href="mes-espaces.html" title="Louer un bureau privatif">Bureaux privatifs</a></li>
+                        <li><a href="mes-espaces.html" title="Réserver un studio visio">Studios visio</a></li>
+                        <li><a href="mes-espaces.html" title="Réserver un espace événementiel">Espaces événementiels</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Colonne : Légal et accès -->
+                <nav class="footer__nav" aria-label="Informations légales et accès">
+                    <h2 class="footer__titre">Légal &amp; accès</h2>
+                    <ul>
+                        <li><a href="mes-espaces.html" title="Consulter nos mentions légales">Mentions légales</a></li>
+                        <li><a href="mes-espaces.html" title="Consulter nos conditions générales">CGU &amp; CGV</a></li>
+                        <li><a href="mes-espaces.html" title="Consulter notre politique de confidentialité">Politique de confidentialité</a></li>
+                        <li><a href="mes-espaces.html" title="Gérer vos préférences de cookies">Gestion des cookies</a></li>
+                        <li><a href="mes-espaces.html" title="Consulter notre déclaration d'accessibilité">Déclaration d'accessibilité</a></li>
+                        <li><a href="mes-espaces.html" title="Parcourir le plan du site">Sitemap</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- Bas de page -->
+            <div class="container footer__bas">
+                <p>&copy; 2026 ProSpace Solutions SAS &mdash; Tous droits réservés</p>
+                <p>
+                    Conformité RGAA 4.1 &middot;
+                    <a href="mes-espaces.html" title="Consulter la déclaration d'accessibilité">Accessibilité : partiellement conforme</a>
+                </p>
+            </div>
+        </footer>
+
+        <script src="js/favoris.js"></script>
+        <script src="js/mes-espaces.js"></script>
+    </body>
+</html>
