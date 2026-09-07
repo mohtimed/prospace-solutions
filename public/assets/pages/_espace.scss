@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/variables" as *;
 @use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
 
 .page-espace {
   padding-top: 100px;
@@ -49,7 +50,12 @@
   gap: $spacing-lg;
   margin-top: $spacing-sm;
   font-size: $font-size-small;
-  color: $text-muted;
+  color: $text-hero;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
 
   img {
     width: 14px;
@@ -58,13 +64,17 @@
   }
 }
 
+strong.espace_note {
+    color: black;
+}
+
 .espace__etoiles {
   color: $star-color;
   margin-right: 6px;
 }
 
 .espace__avis {
-  color: $text-muted;
+  color: $text-hero;
   margin-left: 6px;
 }
 
@@ -188,20 +198,11 @@
 }
 
 .btn-favori {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $spacing-sm;
+  @include button-style($white, $text-color);
   width: 100%;
   padding: $spacing-md;
   margin-bottom: $spacing-sm;
   border: 1px solid $border-color;
-  border-radius: $radius;
-  background-color: $white;
-  color: $text-color;
-  font-size: $font-size-small;
-  font-weight: $font-weight-medium;
-  cursor: pointer;
 
   img {
     width: 16px;
@@ -216,21 +217,17 @@
 }
 
 .btn-contact {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $spacing-sm;
+  @include button-style($primary-color, $white);
   width: 100%;
   padding: $spacing-md;
-  border-radius: $radius;
-  background-color: $primary-color;
-  color: $white;
-  font-size: $font-size-small;
-  font-weight: $font-weight-medium;
 
   img {
     width: 16px;
     height: 16px;
+  }
+
+  &:hover {
+    background-color: $primary-hover;
   }
 }
 

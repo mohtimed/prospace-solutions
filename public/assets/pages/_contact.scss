@@ -1,0 +1,455 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
+
+// ================== HERO ==================
+.contact-hero {
+  padding: 140px 0 $spacing-xl;
+  background-color: $dark-color;
+  text-align: center;
+  color: $white;
+}
+
+.contact-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px $spacing-md;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 50px;
+  background-color: $active-color;
+  color: $active-link-color;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.contact-hero h1 {
+  margin: $spacing-md 0;
+  font-size: $font-size-h1;
+}
+
+.contact-hero__accent {
+  color: $active-link-color;
+}
+
+.contact-hero__texte {
+  color: $text-muted;
+  font-size: $font-size-small;
+}
+
+// ================== SECTION PRINCIPALE ==================
+.contact-principal {
+  padding: $spacing-xl 0;
+}
+
+.contact-principal__inner {
+  display: flex;
+  gap: $spacing-lg;
+  align-items: flex-start;
+}
+
+// ================== FORMULAIRE ==================
+.contact-form {
+  flex: 1 1 60%;
+  padding: $spacing-lg;
+  border: 1px solid $border-color;
+  border-radius: $radius-lg;
+  background-color: $white;
+}
+
+.contact-form__entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: $spacing-lg;
+
+  h2 {
+    font-size: $font-size-h3;
+  }
+}
+
+.contact-form__mention {
+  font-size: 12px;
+  color: $text-muted;
+}
+
+.form__ligne {
+  display: flex;
+  gap: $spacing-md;
+}
+
+.form__groupe {
+  flex: 1;
+  margin-bottom: $spacing-md;
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: $text-color;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 1px solid $border-color;
+    border-radius: $radius;
+    font-family: $font-primary;
+    font-size: $font-size-small;
+    color: $text-color;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 1px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}
+
+.form__erreur {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: $alert-color;
+}
+
+.form__rgpd {
+  margin-bottom: $spacing-md;
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    font-size: 12px;
+    color: $text-muted;
+    cursor: pointer;
+  }
+
+  input {
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+    accent-color: $primary-color;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+  }
+}
+
+.btn-envoyer {
+  @include button-style($primary-color, $white);
+  width: 100%;
+  padding: $spacing-md;
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}
+
+.form__confirmation {
+  margin-top: $spacing-md;
+  padding: $spacing-md;
+  border-radius: $radius;
+  background-color: #ECFDF5;
+  color: #065F46;
+  font-size: $font-size-small;
+  text-align: center;
+}
+
+// ================== INFORMATIONS ==================
+.contact-infos {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.contact-infos__carte {
+  padding: $spacing-lg;
+  border-radius: $radius-lg;
+  background-color: $dark-color;
+  color: $white;
+
+  h2 {
+    font-size: $font-size-base;
+  }
+}
+
+.contact-infos__soustitre {
+  margin-top: 4px;
+  font-size: 11px;
+  color: $active-link-color;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-infos__liste {
+  margin-top: $spacing-lg;
+
+  li {
+    display: flex;
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+    font-size: $font-size-small;
+  }
+
+  img {
+    flex: none;
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $active-link-color;
+    }
+  }
+}
+
+.contact-infos__label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 10px;
+  color: $text-muted;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-infos__garantie {
+  display: flex;
+  gap: $spacing-md;
+  padding: $spacing-md;
+  border: 1px solid $capacite-border;
+  border-radius: $radius;
+  background-color: $capacite-bg;
+  font-size: 12px;
+  color: $text-muted;
+
+  img {
+    flex: none;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.contact-infos__garantie-titre {
+  margin-bottom: 4px;
+  font-weight: $font-weight-bold;
+  color: $text-color;
+}
+
+.contact-infos__avis {
+  padding: $spacing-md;
+  border: 1px solid $border-color;
+  border-radius: $radius;
+  background-color: $white;
+}
+
+.contact-infos__note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: $font-size-small;
+}
+
+.contact-infos__etoiles {
+  color: $star-color;
+}
+
+.contact-infos__avis blockquote {
+  margin-top: $spacing-sm;
+  font-size: 12px;
+  font-style: italic;
+  color: $text-muted;
+}
+
+.contact-infos__auteur {
+  margin-top: $spacing-sm;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+}
+
+// ================== ÉQUIPE ==================
+.equipe {
+  padding: $spacing-xl 0;
+  background-color: $white;
+  text-align: center;
+}
+
+.equipe__badge {
+  font-size: 11px;
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.equipe__titre {
+  margin: $spacing-sm 0;
+  font-size: $font-size-h2;
+}
+
+.equipe__texte {
+  max-width: 480px;
+  margin: 0 auto $spacing-xl;
+  font-size: $font-size-small;
+  color: $text-muted;
+}
+
+.carrousel__piste {
+  display: flex;
+  justify-content: center;
+  gap: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+.membre {
+  flex: 0 0 140px;
+}
+
+.membre img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: $radius-lg;
+}
+
+.membre__nom {
+  margin-top: $spacing-sm;
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+}
+
+.membre__poste {
+  font-size: 12px;
+  color: $primary-color;
+}
+
+.carrousel__controles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.carrousel__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid $border-color;
+  border-radius: 50%;
+  background-color: $white;
+  cursor: pointer;
+
+  img {
+    width: 12px;
+    height: 12px;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}
+
+.carrousel__points {
+  display: flex;
+  gap: 6px;
+}
+
+.carrousel__point {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: $border-color;
+  cursor: pointer;
+}
+
+.carrousel__point.actif {
+  width: 24px;
+  border-radius: 50px;
+  background-color: $primary-color;
+}
+
+// ================== ADRESSE ==================
+.contact-adresse {
+  padding: $spacing-xl 0;
+}
+
+.contact-adresse__carte {
+  padding: $spacing-xl;
+  border: 1px solid $capacite-border;
+  border-radius: $radius-lg;
+  background-color: $capacite-bg;
+  text-align: center;
+}
+
+.contact-adresse__icone {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto $spacing-md;
+  padding: 10px;
+  border-radius: 50%;
+  background-color: #0284C71A;
+}
+
+.contact-adresse__titre {
+  font-weight: $font-weight-bold;
+}
+
+.contact-adresse__detail {
+  margin-top: 4px;
+  font-size: 12px;
+  color: $text-muted;
+}
+
+.contact-adresse__lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: $spacing-md;
+  color: $primary-color;
+  font-size: $font-size-small;
+
+  img {
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

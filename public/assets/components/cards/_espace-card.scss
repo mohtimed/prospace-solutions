@@ -1,6 +1,7 @@
 @use "../../abstracts/colors" as *;
 @use "../../abstracts/variables" as *;
 @use "../../abstracts/typography" as *;
+@use "../../abstracts/mixins" as *;
 
 .resultats {
   padding: $spacing-xl 0;
@@ -25,11 +26,15 @@
   border: 1px solid $border-color;
   border-radius: $radius-lg;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  @include carte-hover;
+}
+
+.carte__lien {
+  @include button-style($primary-color, $white);
+  border-radius: 50px;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background-color: $primary-hover;
   }
 }
 

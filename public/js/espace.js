@@ -38,7 +38,7 @@ function afficherEspace(espace) {
 
   let htmlNote = "";
   htmlNote += "<span class='espace__etoiles' aria-hidden='true'>★★★★★</span>";
-  htmlNote += "<strong>" + espace.note + "</strong>";
+  htmlNote += "<strong class='espace_note'>" + espace.note + "</strong>";
   htmlNote += "<span class='espace__avis'>· " + espace.avis + " avis vérifiés</span>";
   espaceNote.innerHTML = htmlNote;
 

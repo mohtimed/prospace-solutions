@@ -1,20 +1,36 @@
 @use "variables" as *;
+@use "typography" as *;
 
-// Mixin pour le responsive
+// Style de base des boutons
+@mixin button-style($bg-color, $text-color) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $radius;
+  background-color: $bg-color;
+  color: $text-color;
+  font-size: $font-size-small;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+// Media queries
 @mixin responsive($breakpoint) {
   @media (max-width: $breakpoint) {
     @content;
   }
 }
 
-// Mixin pour les boutons
-@mixin button-style($bg-color, $text-color) {
-  display: inline-block;
-  padding: $spacing-sm $spacing-md;
-  background-color: $bg-color;
-  color: $text-color;
-  border: none;
-  border-radius: $radius;
-  cursor: pointer;
-  text-decoration: none;
+// Effet de survol des cartes
+@mixin carte-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
 }
