@@ -469,3 +469,41 @@
     text-decoration: underline;
   }
 }
+
+@include responsive($breakpoint-mobile) {
+  .contact-hero {
+    padding: 120px 0 $spacing-lg;
+  }
+
+  .contact-hero h1 {
+    font-size: 32px;
+  }
+
+  .contact-principal__inner {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-infos {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .form__ligne {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .carrousel__piste {
+    flex-wrap: wrap;
+    gap: $spacing-md;
+  }
+
+  .membre {
+    flex: 0 0 calc(50% - 8px);
+  }
+
+  .contact-adresse__carte {
+    padding: $spacing-lg $spacing-md;
+  }
+}

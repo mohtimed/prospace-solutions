@@ -199,3 +199,34 @@
     text-decoration: underline;
   }
 }
+
+@include responsive($breakpoint-mobile) {
+  .mes-espaces__entete {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .carte-favori {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .carte-favori__image {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 160px;
+  }
+
+  .carte-favori__contenu {
+    padding: 0 $spacing-md;
+  }
+
+  .carte-favori__infos {
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+  }
+
+  .carte-favori__actions {
+    padding: 0 $spacing-md $spacing-md;
+  }
+}

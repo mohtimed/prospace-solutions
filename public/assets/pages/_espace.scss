@@ -237,3 +237,45 @@ strong.espace_note {
   color: $text-muted;
   text-align: center;
 }
+
+@include responsive($breakpoint-mobile) {
+  .espace__galerie {
+    flex-direction: column;
+  }
+
+  .galerie__principale {
+    flex: 1 1 auto;
+  }
+
+  .galerie__principale img {
+    height: 240px;
+  }
+
+  .galerie__secondaires {
+    flex-direction: row;
+  }
+
+  .galerie__secondaires img:first-child,
+  .galerie__secondaires img:last-child {
+    height: 120px;
+  }
+
+  .espace__corps {
+    flex-direction: column;
+  }
+
+  .espace__tarifs {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .espace__equipements li {
+    flex: 1 1 100%;
+  }
+
+  .espace__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-sm;
+  }
+}

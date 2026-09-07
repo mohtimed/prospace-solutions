@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/variables" as *;
 @use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
 
 .header {
   position: fixed;
@@ -83,4 +84,24 @@
 
 .hidden {
   display: none;
+}
+
+@include responsive($breakpoint-mobile) {
+  .header__inner {
+    flex-direction: column;
+    gap: $spacing-md;
+  }
+
+  .header__logo span {
+    font-size: $font-size-small;
+  }
+
+  .header__nav ul {
+    gap: 4px;
+  }
+
+  .header__nav a {
+    padding: 6px $spacing-sm;
+    font-size: 12px;
+  }
 }

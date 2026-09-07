@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/variables" as *;
 @use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
 
 .footer {
   background-color: $dark-color;
@@ -108,5 +109,17 @@
     &:hover {
       color: $active-link-color;
     }
+  }
+}
+
+@include responsive($breakpoint-mobile) {
+  .footer__inner {
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  .footer__bas {
+    flex-direction: column;
+    text-align: center;
   }
 }

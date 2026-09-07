@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as *;
 @use "../abstracts/variables" as *;
 @use "../abstracts/typography" as *;
+@use "../abstracts/mixins" as *;
 
 .hero {
   position: relative;
@@ -70,5 +71,21 @@
   img {
     width: 16px;
     height: 16px;
+  }
+}
+
+@include responsive($breakpoint-mobile) {
+  .hero {
+    min-height: auto;
+    padding: 140px 0 $spacing-xl;
+  }
+
+  .hero__title {
+    font-size: 32px;
+  }
+
+  .hero__features {
+    flex-direction: column;
+    gap: $spacing-sm;
   }
 }

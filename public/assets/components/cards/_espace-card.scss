@@ -211,3 +211,15 @@
 .carte__favori.actif {
   background-color: #FF2056;
 }
+
+@include responsive($breakpoint-tablet) {
+  .carte {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+@include responsive($breakpoint-mobile) {
+  .carte {
+    flex: 0 0 100%;
+  }
+}
