@@ -1,3 +1,8 @@
+import { chargerEspaces } from "./utils.js";
+import { estFavori, basculerFavori, majBadgeFavoris } from "./favoris.js";
+
+majBadgeFavoris();
+
 // ================== RÉCUPÉRATION DE L'ID DANS L'URL ==================
 const parametres = new URLSearchParams(window.location.search);
 const idEspace = parametres.get("id");
@@ -108,13 +113,7 @@ function majBoutonFavoriFiche(id) {
 }
 
 // ================== CHARGEMENT DES DONNÉES ==================
-fetch("data/espaces.json")
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("Impossible de charger les espaces.");
-    }
-    return response.json();
-  })
+chargerEspaces()
   .then(function (data) {
     const espace = data.find(function (element) {
       return element.id === idEspace;

@@ -1,7 +1,7 @@
 // ================== GESTION DES FAVORIS ==================
 
 // Récupère la liste des favoris depuis le localStorage
-function getFavoris() {
+export function getFavoris() {
   const favorisTexte = localStorage.getItem("favoris");
 
   if (favorisTexte === null) {
@@ -12,18 +12,18 @@ function getFavoris() {
 }
 
 // Enregistre la liste des favoris dans le localStorage
-function sauvegarderFavoris(favoris) {
+export function sauvegarderFavoris(favoris) {
   localStorage.setItem("favoris", JSON.stringify(favoris));
 }
 
 // Vérifie si un espace est déjà en favori
-function estFavori(id) {
+export function estFavori(id) {
   const favoris = getFavoris();
   return favoris.includes(id);
 }
 
 // Ajoute ou retire un espace des favoris
-function basculerFavori(id) {
+export function basculerFavori(id) {
   let favoris = getFavoris();
 
   if (favoris.includes(id)) {
@@ -45,7 +45,7 @@ function basculerFavori(id) {
 }
 
 // Met à jour le badge du header
-function majBadgeFavoris() {
+export function majBadgeFavoris() {
   const badge = document.getElementById("badge-favoris");
 
   if (badge === null) {
@@ -61,6 +61,3 @@ function majBadgeFavoris() {
     badge.classList.remove("hidden");
   }
 }
-
-// Au chargement de la page, on affiche le bon nombre
-majBadgeFavoris();

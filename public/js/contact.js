@@ -1,3 +1,7 @@
+import { majBadgeFavoris } from "./favoris.js";
+
+majBadgeFavoris();
+
 // ================== SÉLECTION DES ÉLÉMENTS ==================
 const formContact = document.getElementById("form-contact");
 const confirmation = document.getElementById("form-confirmation");

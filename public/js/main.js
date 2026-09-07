@@ -1,3 +1,8 @@
+import { chargerEspaces, afficherEquipements } from "./utils.js";
+import { estFavori, basculerFavori, majBadgeFavoris } from "./favoris.js";
+
+majBadgeFavoris();
+
 // ================== SÉLECTION DES ÉLÉMENTS ==================
 const listeEspaces = document.getElementById("liste-espaces");
 const compteur = document.getElementById("compteur-espaces");
@@ -10,31 +15,6 @@ const checkboxes = document.querySelectorAll("input[name='equipements']");
 
 // Stocke tous les espaces chargés depuis le JSON
 let tousLesEspaces = [];
-
-// ================== TRADUCTION DES ÉQUIPEMENTS ==================
-function afficherEquipements(equipements) {
-  let html = "";
-
-  equipements.forEach(function (equipement) {
-    let nom = "";
-
-    if (equipement === "wifi") {
-      nom = "Fibre";
-    } else if (equipement === "pmr") {
-      nom = "PMR";
-    } else if (equipement === "ecran") {
-      nom = "4K";
-    } else if (equipement === "visio") {
-      nom = "Visio";
-    } else if (equipement === "cafe") {
-      nom = "Café";
-    }
-
-    html += "<li><img src='img/Icon-" + equipement + ".png' alt=''>" + nom + "</li>";
-  });
-
-  return html;
-}
 
 // ================== AFFICHAGE DES CARTES ==================
 function afficherEspaces(espaces) {
@@ -154,13 +134,7 @@ function filtrerEspaces() {
 // ================== CHARGEMENT DES DONNÉES ==================
 spinner.classList.remove("hidden");
 
-fetch("data/espaces.json")
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("Impossible de charger les espaces.");
-    }
-    return response.json();
-  })
+chargerEspaces()
   .then(function (data) {
     tousLesEspaces = data;
     afficherEspaces(data);

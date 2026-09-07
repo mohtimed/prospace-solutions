@@ -1,3 +1,8 @@
+import { chargerEspaces } from "./utils.js";
+import { getFavoris, basculerFavori, majBadgeFavoris } from "./favoris.js";
+
+majBadgeFavoris();
+
 // ================== SÉLECTION DES ÉLÉMENTS ==================
 const listeFavoris = document.getElementById("liste-favoris");
 const compteurFavoris = document.getElementById("compteur-favoris");
@@ -96,13 +101,7 @@ btnVider.addEventListener("click", function () {
 });
 
 // ================== CHARGEMENT DES DONNÉES ==================
-fetch("data/espaces.json")
-  .then(function (response) {
-    if (!response.ok) {
-      throw new Error("Impossible de charger les espaces.");
-    }
-    return response.json();
-  })
+chargerEspaces()
   .then(function (data) {
     tousLesEspaces = data;
     afficherFavoris();
