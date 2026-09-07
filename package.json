@@ -12,6 +12,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "sass": "^1.103.1"
+    "sass": "^1.104.0"
   }
 }

@@ -328,19 +328,34 @@
 .carrousel__piste {
   display: flex;
   justify-content: center;
-  gap: $spacing-lg;
+  gap: 115px;
   margin-bottom: $spacing-lg;
 }
 
 .membre {
   flex: 0 0 140px;
+  transition: transform 0.3s ease;
 }
 
-.membre img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
+.membre__photo {
+  overflow: hidden;
   border-radius: $radius-lg;
+
+  img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    transition: transform 0.3s ease;
+  }
+}
+
+.membre:hover .membre__photo img {
+  transform: scale(1.1);
 }
 
 .membre__nom {
@@ -350,7 +365,7 @@
 }
 
 .membre__poste {
-  font-size: 12px;
+  font-size: 11px;
   color: $primary-color;
 }
 
@@ -371,7 +386,6 @@
   border: 1px solid $border-color;
   border-radius: 50%;
   background-color: $white;
-  cursor: pointer;
 
   img {
     width: 12px;
@@ -380,8 +394,10 @@
 
   &:hover {
     border-color: $primary-color;
+    background-color: $primary-color;
   }
 }
+
 
 .carrousel__points {
   display: flex;

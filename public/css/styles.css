@@ -1134,19 +1134,32 @@ strong.espace_note {
 .carrousel__piste {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 115px;
   margin-bottom: 32px;
 }
 
 .membre {
   flex: 0 0 140px;
+  transition: transform 0.3s ease;
 }
 
-.membre img {
+.membre__photo {
+  overflow: hidden;
+  border-radius: 16px;
+}
+.membre__photo img {
   width: 100%;
   height: 140px;
   object-fit: cover;
-  border-radius: 16px;
+  transition: transform 0.4s ease;
+}
+.membre__photo:hover {
+  transform: translateY(-4px);
+  transition: transform 0.3s ease;
+}
+
+.membre:hover .membre__photo img {
+  transform: scale(1.1);
 }
 
 .membre__nom {
@@ -1156,7 +1169,7 @@ strong.espace_note {
 }
 
 .membre__poste {
-  font-size: 12px;
+  font-size: 11px;
   color: #1E88E5;
 }
 
@@ -1177,7 +1190,6 @@ strong.espace_note {
   border: 1px solid #E1E6ED;
   border-radius: 50%;
   background-color: #FFFFFF;
-  cursor: pointer;
 }
 .carrousel__btn img {
   width: 12px;
@@ -1185,6 +1197,7 @@ strong.espace_note {
 }
 .carrousel__btn:hover {
   border-color: #1E88E5;
+  background-color: #1E88E5;
 }
 
 .carrousel__points {
@@ -1226,7 +1239,7 @@ strong.espace_note {
   margin: 0 auto 16px;
   padding: 10px;
   border-radius: 50%;
-  background-color: #FFFFFF;
+  background-color: rgba(2, 132, 199, 0.1019607843);
 }
 
 .contact-adresse__titre {

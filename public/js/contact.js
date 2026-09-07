@@ -101,3 +101,115 @@ formContact.addEventListener("submit", function (event) {
     confirmation.classList.add("hidden");
   }
 });
+
+// ================== DONNÉES DE L'ÉQUIPE ==================
+const equipe = [
+  { nom: "Alexandre Moreau", poste: "CEO & Co-fondateur", photo: "img/equipe3_converted.png" },
+  { nom: "Sophie Leclerc", poste: "Directrice Commerciale", photo: "img/equipe4_converted.png" },
+  { nom: "Thomas Bergeron", poste: "Responsable Partenariats", photo: "img/equipe5_converted.png" },
+  { nom: "Marine Dubois", poste: "Chargée de Clientèle Senior", photo: "img/equipe6_converted.png" },
+  { nom: "Julien Fontaine", poste: "Directeur Technique", photo: "img/equipe7_converted.png" },
+  { nom: "Élodie Garnier", poste: "Chargée des Opérations", photo: "img/equipe1_converted.png" },
+  { nom: "Nicolas Vidal", poste: "Responsable Support", photo: "img/equipe2_converted.png" }
+];
+
+// ================== SÉLECTION DES ÉLÉMENTS ==================
+const carrouselPiste = document.getElementById("carrousel-piste");
+const carrouselPoints = document.getElementById("carrousel-points");
+const btnPrecedent = document.getElementById("carrousel-precedent");
+const btnSuivant = document.getElementById("carrousel-suivant");
+
+// Nombre de membres visibles à la fois
+const membresVisibles = 4;
+
+// Position actuelle
+let positionActuelle = 0;
+
+// ================== AFFICHAGE DES MEMBRES ==================
+function afficherMembres() {
+  carrouselPiste.innerHTML = "";
+
+  for (let i = 0; i < membresVisibles; i++) {
+    // Le modulo permet de revenir au début quand on dépasse la fin
+    const index = (positionActuelle + i) % equipe.length;
+    const membre = equipe[index];
+
+    const carte = document.createElement("article");
+    carte.className = "membre";
+
+    let html = "";
+    html += "<div class='membre__photo'>";
+    html += "<img src='" + membre.photo + "' alt='Portrait de " + membre.nom + "' loading='lazy'>";
+    html += "</div>";
+    html += "<p class='membre__nom'>" + membre.nom + "</p>";
+    html += "<p class='membre__poste'>" + membre.poste + "</p>";
+
+    carte.innerHTML = html;
+    carrouselPiste.appendChild(carte);
+  }
+
+  majPoints();
+}
+
+// ================== POINTS DE PAGINATION ==================
+function creerPoints() {
+  carrouselPoints.innerHTML = "";
+
+  for (let i = 0; i < equipe.length; i++) {
+    const point = document.createElement("button");
+    point.className = "carrousel__point";
+    point.dataset.position = i;
+    point.setAttribute("aria-label", "Afficher à partir de " + equipe[i].nom);
+    carrouselPoints.appendChild(point);
+  }
+}
+
+function majPoints() {
+  const points = document.querySelectorAll(".carrousel__point");
+
+  points.forEach(function (point, index) {
+    if (index === positionActuelle) {
+      point.classList.add("actif");
+    } else {
+      point.classList.remove("actif");
+    }
+  });
+}
+
+// ================== ÉCOUTEURS ==================
+btnPrecedent.addEventListener("click", function () {
+  positionActuelle = positionActuelle - 1;
+
+  // Si on passe avant le premier, on repart à la fin
+  if (positionActuelle < 0) {
+    positionActuelle = equipe.length - 1;
+  }
+
+  afficherMembres();
+});
+
+btnSuivant.addEventListener("click", function () {
+  positionActuelle = positionActuelle + 1;
+
+  // Si on dépasse le dernier, on repart au début
+  if (positionActuelle >= equipe.length) {
+    positionActuelle = 0;
+  }
+
+  afficherMembres();
+});
+
+carrouselPoints.addEventListener("click", function (event) {
+  const point = event.target.closest(".carrousel__point");
+
+  if (point === null) {
+    return;
+  }
+
+  positionActuelle = parseInt(point.dataset.position);
+  afficherMembres();
+});
+
+// ================== INITIALISATION ==================
+creerPoints();
+afficherMembres();
