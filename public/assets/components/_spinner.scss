@@ -1,0 +1,21 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/variables" as *;
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: $spacing-xl auto;
+  border: 3px solid $border-color;
+  border-top-color: $primary-color;
+  border-radius: 50%;
+  animation: rotation 0.8s linear infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

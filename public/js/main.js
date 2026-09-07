@@ -152,6 +152,8 @@ function filtrerEspaces() {
 }
 
 // ================== CHARGEMENT DES DONNÉES ==================
+spinner.classList.remove("hidden");
+
 fetch("data/espaces.json")
   .then(function (response) {
     if (!response.ok) {
@@ -162,8 +164,10 @@ fetch("data/espaces.json")
   .then(function (data) {
     tousLesEspaces = data;
     afficherEspaces(data);
+    spinner.classList.add("hidden");
   })
   .catch(function (error) {
+    spinner.classList.add("hidden");
     console.error("Erreur : " + error.message);
   });
 
